@@ -17,6 +17,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '21'
+          distribution: 'temurin'
 
       # Step 3: Run the Weather App
       - name: Run Weather App
