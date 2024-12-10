@@ -57,7 +57,15 @@
 			<groupId>io.swagger</groupId>
 			<artifactId>swagger-java-client</artifactId>
 			<version>1.0.0</version>
-			<scope>compile</scope>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/libs/swagger-java-client-1.0.0.jar</systemPath>
+		</dependency>
+
+		<!-- ThreeTen Backport -->
+		<dependency>
+			<groupId>org.threeten</groupId>
+			<artifactId>threetenbp</artifactId>
+			<version>1.6.6</version>
 		</dependency>
 
 	</dependencies>

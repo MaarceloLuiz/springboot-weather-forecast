@@ -1,4 +1,4 @@
-package com.marceloluiz.weatherforecast.configuration;
+package com.marceloluiz.weatherforecast.configurations;
 
 import io.swagger.client.ApiClient;
 import io.swagger.client.api.ApisApi;
