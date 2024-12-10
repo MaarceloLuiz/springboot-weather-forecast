@@ -1,0 +1,29 @@
+name: "Update Weather"
+
+on:
+  workflow_dispatch: # Allows manual execution from the Actions tab
+  
+jobs:
+  run-weather-app:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Java
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '21'
+
+      # Step 3: Run the Weather App
+      - name: Run Weather App
+        env:
+          WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
+          FORECAST_CITY: Rio de Janeiro
+          FORECAST_DAYS: 3
+        run: |
+          mvn clean package
+          java -jar target/weatherforecast-0.0.1-SNAPSHOT.jar
