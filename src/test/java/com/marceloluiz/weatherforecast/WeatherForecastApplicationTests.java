@@ -8,9 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class WeatherForecastApplicationTests {
 
-	@Mock
-	private WeatherService weatherService;
-
 	@Test
 	void contextLoads() {
 	}

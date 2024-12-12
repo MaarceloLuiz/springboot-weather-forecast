@@ -1,6 +1,6 @@
 package com.marceloluiz.weatherforecast.services;
 
-import com.marceloluiz.weatherforecast.configurations.WeatherProperties;
+import com.marceloluiz.weatherforecast.config.WeatherProperties;
 import io.swagger.client.ApiException;
 import io.swagger.client.api.ApisApi;
 import lombok.AllArgsConstructor;

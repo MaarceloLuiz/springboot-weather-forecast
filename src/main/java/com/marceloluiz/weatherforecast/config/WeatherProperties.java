@@ -1,4 +1,4 @@
-package com.marceloluiz.weatherforecast.configurations;
+package com.marceloluiz.weatherforecast.config;
 
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;

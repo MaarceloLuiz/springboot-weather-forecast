@@ -1,4 +1,4 @@
-package com.marceloluiz.weatherforecast.configurations;
+package com.marceloluiz.weatherforecast.config;
 
 import io.swagger.client.ApiClient;
 import io.swagger.client.api.ApisApi;
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class WeatherApiConfiguration {
-    private static final String API_BASE_PATH = "https://api.weatherapi.com/v1/";
+    private static final String API_BASE_PATH = "https://api.weatherapi.com/v1";
 
     @Value("${WEATHER_API_KEY}")
     private String apiKey;
