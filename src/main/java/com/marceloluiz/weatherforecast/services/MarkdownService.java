@@ -20,7 +20,7 @@ public class MarkdownService {
 
             markdown.append("<tr>")
                     .append("<td>").append(weatherData.getDate()).append("</td>")
-                    .append("<td><img src=\"").append(weatherData.getConditionImgUrl()).append("\" alt=\"Weather Condition Icon\"/></td>")
+                    .append("<td><img src=\"https:").append(weatherData.getConditionImgUrl()).append("\" alt=\"Weather Condition Icon\"/></td>")
                     .append("<td>").append(weatherData.getCondition()).append("</td>")
                     .append("<td>").append(temperature).append(" °C</td>")
                     .append("<td>").append(weatherData.getMaxWind()).append(" kph</td>")
