@@ -15,11 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class WeatherController {
     private final WeatherService weatherService;
 
-    @GetMapping("/forecast/raw")
-    public ResponseEntity<?> getRawForecastData() throws ApiException {
-        return ResponseEntity.ok(weatherService.getRawForecastData());
-    }
-
     @GetMapping("/forecast")
     public ResponseEntity<WeatherForecast> getWeatherForecast() throws ApiException {
         return ResponseEntity.ok(weatherService.getWeatherForecast());
