@@ -10,7 +10,9 @@ public class MarkdownService {
 
         markdown.append("## ")
                 .append(forecast.getForecast().getFirst().getName())
-                .append("'s Weather Forecast for Next 3 Days\n\n");
+                .append("'s Weather Forecast for Next ")
+                .append(forecast.getForecast().size())
+                .append(" Days\n\n");
 
         markdown.append("<table>\n");
         markdown.append("<tr><th>Date</th><th>Weather</th><th>Condition</th><th>Temperature</th><th>Wind</th></tr>\n");

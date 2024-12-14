@@ -23,8 +23,8 @@ jobs:
       - name: Run Weather App
         env:
           WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
-          FORECAST_CITY: Rio de Janeiro
-          FORECAST_DAYS: 3
+          FORECAST_CITY: ${{ vars.FORECAST_CITY }}
+          FORECAST_DAYS: ${{ vars.FORECAST_DAYS }}
         run: |
           mvn clean package
           java -jar target/weatherforecast-0.0.1-SNAPSHOT.jar

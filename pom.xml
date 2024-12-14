@@ -29,6 +29,15 @@
 	<properties>
 		<java.version>21</java.version>
 	</properties>
+
+	<repositories>
+		<repository>
+			<id>github</id>
+			<name>WeatherAPI Java Client Repositories</name>
+			<url>https://maven.pkg.github.com/MaarceloLuiz/springboot-weather-forecast</url>
+		</repository>
+	</repositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
