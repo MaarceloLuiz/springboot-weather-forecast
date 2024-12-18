@@ -41,6 +41,6 @@ jobs:
           FORECAST_DAYS: ${{ vars.FORECAST_DAYS }}
         run: |
           mvn clean package
-          timeout 60s java -jar target/weatherforecast-0.0.1-SNAPSHOT.jar
+          timeout 300s java -jar target/weatherforecast-0.0.1-SNAPSHOT.jar
           echo "Spring Boot application stopped automatically after timeout"
 
