@@ -1,25 +1,38 @@
 name: "Update Weather"
 
 on:
-  workflow_dispatch: # Allows manual execution from the Actions tab
+  workflow_dispatch:
+  schedule:
+    - cron: "*/5 * * * *" # Runs every 5 minutes
+    #- cron: "0 0 * * *"   # Runs once a day at midnight UTC
   
 jobs:
   run-weather-app:
     runs-on: ubuntu-latest
 
     steps:
-      # Check out the repository
       - name: Check out repository
         uses: actions/checkout@v3
 
-      # Set up Java
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
           java-version: '21'
           distribution: 'temurin'
+          
+      - name: Configure Maven for GitHub Packages
+        run: |
+          mkdir -p ~/.m2
+          echo "<settings>
+            <servers>
+              <server>
+                <id>github</id>
+                <username>${{ github.actor }}</username>
+                <password>${{ secrets.GH_TOKEN }}</password>
+              </server>
+            </servers>
+          </settings>" > ~/.m2/settings.xml
 
-      # Run the Weather App
       - name: Run Weather App
         env:
           WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
