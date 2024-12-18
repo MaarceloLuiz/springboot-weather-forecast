@@ -9,7 +9,7 @@ on:
 jobs:
   run-weather-app:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 3
 
     steps:
       - name: Check out repository
@@ -41,6 +41,12 @@ jobs:
           FORECAST_DAYS: ${{ vars.FORECAST_DAYS }}
         run: |
           mvn clean package
-          timeout 300s java -jar target/weatherforecast-0.0.1-SNAPSHOT.jar
-          echo "Spring Boot application stopped automatically after timeout"
-
+          java -jar target/weatherforecast-0.0.1-SNAPSHOT.jar
+          
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add .
+          git commit -m "Update weather data" || echo "No changes to commit"
+          git push origin main
