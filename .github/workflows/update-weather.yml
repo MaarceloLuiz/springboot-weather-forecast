@@ -42,6 +42,10 @@ jobs:
         run: |
           mvn clean package
           java -jar target/weatherforecast-0.0.1-SNAPSHOT.jar
+          echo "Spring Boot application started successfully."
+          sleep 60
+          mvn spring-boot:stop
+          echo "Spring Boot application stopped successfully."
           
       - name: Commit and Push Changes
         run: |
