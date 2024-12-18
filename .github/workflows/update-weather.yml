@@ -41,12 +41,10 @@ jobs:
           FORECAST_DAYS: ${{ vars.FORECAST_DAYS }}
         run: |
           mvn clean package
-          java -jar target/weatherforecast-0.0.1-SNAPSHOT.jar
-          APP_PID=$!
-          echo "Spring Boot application started with PID: $APP_PID"
+          # java -jar target/weatherforecast-0.0.1-SNAPSHOT.jar
+          mvn spring-boot:start
           sleep 60
-          kill $APP_PID
-          echo "Spring Boot application stopped successfully."
+          mvn spring-boot:stop
           
       - name: Commit and Push Changes
         run: |
