@@ -3,8 +3,7 @@ name: "Update Weather"
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/5 * * * *" # Runs every 5 minutes
-    #- cron: "0 0 * * *"   # Runs once a day at midnight UTC
+    - cron: "0 0 * * *"   # Runs once a day at midnight UTC
   
 jobs:
   run-weather-app:
