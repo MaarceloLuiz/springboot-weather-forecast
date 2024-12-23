@@ -1,25 +1,38 @@
 name: "Update Weather"
 
 on:
-  workflow_dispatch: # Allows manual execution from the Actions tab
+  workflow_dispatch:
+  schedule:
+    - cron: "0 7 * * *"  # Runs once a day at 7 AM UTC
   
 jobs:
   run-weather-app:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
-      # Check out the repository
       - name: Check out repository
         uses: actions/checkout@v3
 
-      # Set up Java
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
           java-version: '21'
           distribution: 'temurin'
+          
+      - name: Configure Maven for GitHub Packages
+        run: |
+          mkdir -p ~/.m2
+          echo "<settings>
+            <servers>
+              <server>
+                <id>github</id>
+                <username>${{ github.actor }}</username>
+                <password>${{ secrets.GH_TOKEN }}</password>
+              </server>
+            </servers>
+          </settings>" > ~/.m2/settings.xml
 
-      # Run the Weather App
       - name: Run Weather App
         env:
           WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
@@ -27,4 +40,15 @@ jobs:
           FORECAST_DAYS: ${{ vars.FORECAST_DAYS }}
         run: |
           mvn clean package
-          java -jar target/weatherforecast-0.0.1-SNAPSHOT.jar
+          # java -jar target/weatherforecast-0.0.1-SNAPSHOT.jar
+          mvn spring-boot:start
+          sleep 60
+          mvn spring-boot:stop
+          
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add .
+          git commit -m "Update weather data" || echo "No changes to commit"
+          git push origin main
