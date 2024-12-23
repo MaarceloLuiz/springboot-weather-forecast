@@ -53,6 +53,7 @@ public class WeatherService {
                 JsonObject forecastDayJson = forecastDayNode.getAsJsonObject();
                 JsonObject dayDetailsJson = forecastDayJson.getAsJsonObject("day");
                 JsonObject conditionsDetailsJson = dayDetailsJson.getAsJsonObject("condition");
+                JsonObject forecastAstro = forecastDayJson.getAsJsonObject("astro");
 
                 String date = forecastDayJson.get("date").getAsString();
                 double minTemperature = dayDetailsJson.get("mintemp_c").getAsDouble();
@@ -60,8 +61,10 @@ public class WeatherService {
                 double maxWind = dayDetailsJson.get("maxwind_kph").getAsDouble();
                 String condition = conditionsDetailsJson.get("text").getAsString();
                 String conditionImgUrl = conditionsDetailsJson.get("icon").getAsString();
+                String moonPhase = forecastAstro.get("moon_phase").getAsString();
+                String moonImg = "assets/img/" + moonPhase + ".png";
 
-                weatherData.add(WeatherData.valueOf(name, date, minTemperature, maxTemperature, maxWind, condition, conditionImgUrl));
+                weatherData.add(WeatherData.valueOf(name, date, minTemperature, maxTemperature, maxWind, condition, conditionImgUrl, moonPhase, moonImg));
             }
 
             return WeatherForecast.from(weatherData);

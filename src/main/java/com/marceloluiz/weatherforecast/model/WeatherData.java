@@ -11,12 +11,14 @@ public class WeatherData {
     private double maxWind;
     private String condition;
     private String conditionImgUrl;
+    private String moonPhase;
+    private String moonImg;
 
-    public static WeatherData valueOf(String name, String date, double minTemperature, double maxTemperature, double maxWind, String condition, String conditionImgUrl){
-        return new WeatherData(name, date, minTemperature, maxTemperature, maxWind, condition, conditionImgUrl);
+    public static WeatherData valueOf(String name, String date, double minTemperature, double maxTemperature, double maxWind, String condition, String conditionImgUrl, String moonPhase, String moonImg){
+        return new WeatherData(name, date, minTemperature, maxTemperature, maxWind, condition, conditionImgUrl, moonPhase, moonImg);
     }
 
-    public WeatherData(String name, String date, double minTemperature, double maxTemperature, double maxWind, String condition, String conditionImgUrl) {
+    public WeatherData(String name, String date, double minTemperature, double maxTemperature, double maxWind, String condition, String conditionImgUrl, String moonPhase, String moonImg) {
         this.name = name;
         this.date = date;
         this.minTemperature = minTemperature;
@@ -24,5 +26,7 @@ public class WeatherData {
         this.maxWind = maxWind;
         this.condition = condition;
         this.conditionImgUrl = conditionImgUrl;
+        this.moonPhase = moonPhase;
+        this.moonImg = moonImg;
     }
 }
