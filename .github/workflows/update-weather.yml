@@ -38,6 +38,7 @@ jobs:
           WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
           FORECAST_CITY: ${{ vars.FORECAST_CITY }}
           FORECAST_DAYS: ${{ vars.FORECAST_DAYS }}
+          REPO_URL: https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/assets/img
         run: |
           mvn clean package
           # java -jar target/weatherforecast-0.0.1-SNAPSHOT.jar
