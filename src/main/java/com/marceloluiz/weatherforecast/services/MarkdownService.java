@@ -31,7 +31,7 @@ public class MarkdownService {
                     .append("<td><img src=\"https:").append(weatherData.getConditionImgUrl()).append("\" alt=\"Weather Condition Icon\"/></td>")
                     .append("<td>").append(weatherData.getCondition()).append("</td>")
                     .append("<td>").append(weatherData.getMoonPhase()).append("</td>")
-                    .append("<td><img src=\"").append(weatherData.getMoonImg()).append("\" alt=\"Moon Phase Icon\" style=\"width:50px; height:50px;\"/></td>")
+                    .append("<td><img src=\"").append(getImgUrl(weatherData.getMoonPhase())).append("\" alt=\"Moon Phase Icon\" style=\"width:50px; height:50px;\"/></td>")
                     .append("<td>").append(temperature).append(" °C</td>")
                     .append("<td>").append(weatherData.getMaxWind()).append(" kph</td>")
                     .append("</tr>\n");
@@ -44,7 +44,19 @@ public class MarkdownService {
         return markdown.toString();
     }
 
-    public String generateTimestamp(){
+    private String getImgUrl(String imgName){
+        return getRepoUrl() + "/" + imgName + ".png";
+    }
+
+    private String getRepoUrl(){
+        String repoUrl = System.getenv("REPO_URL");
+        if(repoUrl == null || repoUrl.isEmpty()){
+            throw new IllegalStateException("REPO_URL environment variable not available");
+        }
+        return repoUrl;
+    }
+
+    private String generateTimestamp(){
         return ZonedDateTime.now().format(FORMATTER);
     }
 
