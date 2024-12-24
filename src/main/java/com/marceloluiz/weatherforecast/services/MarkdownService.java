@@ -3,8 +3,14 @@ package com.marceloluiz.weatherforecast.services;
 import com.marceloluiz.weatherforecast.model.WeatherForecast;
 import org.springframework.stereotype.Service;
 
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+
 @Service
 public class MarkdownService {
+    private static final String TIMESTAMP_FORMAT = "yyyy-MM-dd HH:mm";
+    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern(TIMESTAMP_FORMAT);
+
     public String generateWeatherMarkdown(WeatherForecast forecast){
         StringBuilder markdown = new StringBuilder();
 
@@ -30,9 +36,16 @@ public class MarkdownService {
                     .append("<td>").append(weatherData.getMaxWind()).append(" kph</td>")
                     .append("</tr>\n");
         });
-        markdown.append("</table>\n");
+        markdown.append("</table>\n\n");
+        markdown.append("*Updated at: ")
+                .append(generateTimestamp())
+                .append("*");
 
         return markdown.toString();
+    }
+
+    public String generateTimestamp(){
+        return ZonedDateTime.now().format(FORMATTER);
     }
 
     //will finish later
