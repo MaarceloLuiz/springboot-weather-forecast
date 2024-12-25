@@ -2,20 +2,22 @@
 
 `Rio De Janeiro - 2024-12-25`
 
-<div style="display: flex; align-items: center; justify-content: center; gap: 20px;">
-<div style="text-align: center;">
+<table style="border-collapse: collapse; width: auto; margin: auto;">
+<tr>
+<td align="center" style="border: none; padding: 10px;">
 <img src="https://cdn.weatherapi.com/weather/64x64/day/176.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/>
 
 Patchy rain nearby
 
-</div>
-<div style="text-align: center;">
+</td>
+<td align="center" style="border: none; padding: 10px;">
 <img src="https://raw.githubusercontent.com/MaarceloLuiz/springboot-weather-forecast/main/assets/img/Waning Crescent.png" alt="Moon Phase Icon" style="width:50px; height:50px;"/>
 
 Waning Crescent
 
-</div>
-</div>
+</td>
+</tr>
+</table>
 </div>
 
 ## Weather Forecast for Next 3 Days
@@ -27,4 +29,4 @@ Waning Crescent
 <tr><td>2024-12-27</td><td><img src="https://cdn.weatherapi.com/weather/64x64/day/176.png" alt="Weather Condition Icon" style="width:64px; height:64px;"/></td><td>Patchy rain nearby</td><td>Waning Crescent</td><td><img src="https://raw.githubusercontent.com/MaarceloLuiz/springboot-weather-forecast/main/assets/img/Waning Crescent.png" alt="Moon Phase Icon" style="width:50px; height:50px;"/></td><td>23.4 - 27.6 °C</td><td>9.4 kph</td></tr>
 </table>
 
-*Updated at: 2024-12-25 12:11*
+*Updated at: 2024-12-25 12:46*

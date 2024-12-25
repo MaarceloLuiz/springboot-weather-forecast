@@ -54,21 +54,23 @@ public class MarkdownService {
                 .append(" - ").append(weatherData.getDate())
                 .append("`\n\n");
 
-        markdown.append("<div style=\"display: flex; align-items: center; justify-content: center; gap: 20px;\">\n");
+        markdown.append("<table style=\"border-collapse: collapse; width: auto; margin: auto;\">\n");
+        markdown.append("<tr>\n");
 
-        markdown.append("<div style=\"text-align: center;\">\n")
+        markdown.append("<td align=\"center\" style=\"border: none; padding: 10px;\">\n")
                 .append("<img src=\"https:").append(weatherData.getConditionImgUrl()).append("\" alt=\"Weather Condition Icon\" style=\"width:50px; height:50px;\"/>\n\n")
                 .append(weatherData.getCondition())
                 .append("\n\n")
-                .append("</div>\n");
+                .append("</td>\n");
 
-        markdown.append("<div style=\"text-align: center;\">\n");
-        markdown.append("<img src=\"").append(getImgUrl(weatherData.getMoonPhase())).append("\" alt=\"Moon Phase Icon\" style=\"width:50px; height:50px;\"/>\n\n")
+        markdown.append("<td align=\"center\" style=\"border: none; padding: 10px;\">\n")
+                .append("<img src=\"").append(getImgUrl(weatherData.getMoonPhase())).append("\" alt=\"Moon Phase Icon\" style=\"width:50px; height:50px;\"/>\n\n")
                 .append(weatherData.getMoonPhase())
                 .append("\n\n")
-                .append("</div>\n");
+                .append("</td>\n");
 
-        markdown.append("</div>\n");
+        markdown.append("</tr>\n");
+        markdown.append("</table>\n");
         markdown.append("</div>\n\n");
     }
 
