@@ -47,6 +47,8 @@ public class MarkdownService {
     }
 
     private void generateWeatherMarkdownTitle(StringBuilder markdown, WeatherData weatherData){
+        markdown.append("## Today's Weather\n\n");
+
         markdown.append("<div align=\"center\">\n\n");
 
         markdown.append("`")

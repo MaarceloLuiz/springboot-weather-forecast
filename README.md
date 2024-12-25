@@ -1,3 +1,5 @@
+## Today's Weather
+
 <div align="center">
 
 `Rio De Janeiro - 2024-12-25`
@@ -29,4 +31,4 @@ Waning Crescent
 <tr><td>2024-12-27</td><td><img src="https://cdn.weatherapi.com/weather/64x64/day/176.png" alt="Weather Condition Icon" style="width:64px; height:64px;"/></td><td>Patchy rain nearby</td><td>Waning Crescent</td><td><img src="https://raw.githubusercontent.com/MaarceloLuiz/springboot-weather-forecast/main/assets/img/Waning Crescent.png" alt="Moon Phase Icon" style="width:50px; height:50px;"/></td><td>23.4 - 27.6 °C</td><td>9.4 kph</td></tr>
 </table>
 
-*Updated at: 2024-12-25 12:46*
+*Updated at: 2024-12-25 12:57*
