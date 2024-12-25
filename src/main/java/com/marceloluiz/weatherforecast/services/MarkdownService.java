@@ -44,7 +44,7 @@ public class MarkdownService {
                 .append(generateTimestamp())
                 .append("*\n\n");
 
-        markdown.append("<!-- FORECAST-TABLE-END -->");
+        markdown.append("<!-- FORECAST-TABLE-END -->\n\n");
 
         return markdown.toString();
     }

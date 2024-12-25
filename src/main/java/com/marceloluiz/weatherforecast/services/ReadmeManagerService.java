@@ -14,16 +14,10 @@ public class ReadmeManagerService {
 
     public void updateReadme(){
         try{
-            String currentReadme = fileService.readReadme();
-
-            if (!currentReadme.contains("<!-- FORECAST-TABLE-END -->")) {
-                throw new IllegalStateException("Required placeholders not found in README.");
-            }
-
-            String readmeSecondSection = currentReadme.split("<!-- FORECAST-TABLE-END -->")[1];
+            String readmeHowToUse = fileService.readHowToUseReadme();
 
             WeatherForecast forecast = weatherService.getWeatherForecast();
-            String newReadme = markdownService.generateWeatherMarkdown(forecast) + readmeSecondSection;
+            String newReadme = markdownService.generateWeatherMarkdown(forecast) + readmeHowToUse;
 
             fileService.writeToReadme(newReadme);
         }catch (IllegalStateException e){

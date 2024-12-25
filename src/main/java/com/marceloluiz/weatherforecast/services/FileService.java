@@ -16,7 +16,7 @@ public class FileService {
     private FileProperties fileProperties;
 
     public void writeToReadme(String markdown){
-        String filePath = fileProperties.getPath();
+        String filePath = fileProperties.getPrimaryReadmePath();
         try{
             Files.write(Path.of(filePath), markdown.getBytes(), StandardOpenOption.TRUNCATE_EXISTING);
         }catch (IOException e){
@@ -24,8 +24,8 @@ public class FileService {
         }
     }
 
-    public String readReadme(){
-        String filePath = fileProperties.getPath();
+    public String readHowToUseReadme(){
+        String filePath = fileProperties.getHowToUseReadmePath();
         try{
             return Files.readString(Path.of(filePath));
         } catch (IOException e){
