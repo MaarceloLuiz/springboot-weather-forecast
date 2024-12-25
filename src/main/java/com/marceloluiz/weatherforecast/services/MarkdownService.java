@@ -1,5 +1,6 @@
 package com.marceloluiz.weatherforecast.services;
 
+import com.marceloluiz.weatherforecast.model.WeatherData;
 import com.marceloluiz.weatherforecast.model.WeatherForecast;
 import org.springframework.stereotype.Service;
 
@@ -14,9 +15,10 @@ public class MarkdownService {
     public String generateWeatherMarkdown(WeatherForecast forecast){
         StringBuilder markdown = new StringBuilder();
 
+        generateWeatherMarkdownTitle(markdown, forecast.getForecast().getFirst());
+
         markdown.append("## ")
-                .append(forecast.getForecast().getFirst().getName())
-                .append("'s Weather Forecast for Next ")
+                .append("Weather Forecast for Next ")
                 .append(forecast.getForecast().size())
                 .append(" Days\n\n");
 
@@ -28,7 +30,7 @@ public class MarkdownService {
 
             markdown.append("<tr>")
                     .append("<td>").append(weatherData.getDate()).append("</td>")
-                    .append("<td><img src=\"https:").append(weatherData.getConditionImgUrl()).append("\" alt=\"Weather Condition Icon\"/></td>")
+                    .append("<td><img src=\"https:").append(weatherData.getConditionImgUrl()).append("\" alt=\"Weather Condition Icon\" style=\"width:64px; height:64px;\"/></td>")
                     .append("<td>").append(weatherData.getCondition()).append("</td>")
                     .append("<td>").append(weatherData.getMoonPhase()).append("</td>")
                     .append("<td><img src=\"").append(getImgUrl(weatherData.getMoonPhase())).append("\" alt=\"Moon Phase Icon\" style=\"width:50px; height:50px;\"/></td>")
@@ -42,6 +44,32 @@ public class MarkdownService {
                 .append("*");
 
         return markdown.toString();
+    }
+
+    private void generateWeatherMarkdownTitle(StringBuilder markdown, WeatherData weatherData){
+        markdown.append("<div align=\"center\">\n\n");
+
+        markdown.append("`")
+                .append(weatherData.getName())
+                .append(" - ").append(weatherData.getDate())
+                .append("`\n\n");
+
+        markdown.append("<div style=\"display: flex; align-items: center; justify-content: center; gap: 20px;\">\n");
+
+        markdown.append("<div style=\"text-align: center;\">\n")
+                .append("<img src=\"https:").append(weatherData.getConditionImgUrl()).append("\" alt=\"Weather Condition Icon\" style=\"width:50px; height:50px;\"/>\n\n")
+                .append(weatherData.getCondition())
+                .append("\n\n")
+                .append("</div>\n");
+
+        markdown.append("<div style=\"text-align: center;\">\n");
+        markdown.append("<img src=\"").append(getImgUrl(weatherData.getMoonPhase())).append("\" alt=\"Moon Phase Icon\" style=\"width:50px; height:50px;\"/>\n\n")
+                .append(weatherData.getMoonPhase())
+                .append("\n\n")
+                .append("</div>\n");
+
+        markdown.append("</div>\n");
+        markdown.append("</div>\n\n");
     }
 
     private String getImgUrl(String imgName){
