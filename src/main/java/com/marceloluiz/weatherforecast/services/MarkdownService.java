@@ -14,6 +14,7 @@ public class MarkdownService {
 
     public String generateWeatherMarkdown(WeatherForecast forecast){
         StringBuilder markdown = new StringBuilder();
+        markdown.append("<!-- FORECAST-TABLE-START -->\n\n");
 
         generateWeatherMarkdownTitle(markdown, forecast.getForecast().getFirst());
 
@@ -41,7 +42,9 @@ public class MarkdownService {
         markdown.append("</table>\n\n");
         markdown.append("*Updated at: ")
                 .append(generateTimestamp())
-                .append("*");
+                .append("*\n\n");
+
+        markdown.append("<!-- FORECAST-TABLE-END -->");
 
         return markdown.toString();
     }
