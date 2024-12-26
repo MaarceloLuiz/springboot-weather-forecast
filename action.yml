@@ -14,13 +14,22 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - name: Check Out Weather Forecast Repository
+      uses: actions/checkout@v3
+      with:
+        repository: MaarceloLuiz/springboot-weather-forecast
+        token: ${{ secrets.GH_TOKEN }}
+        path: weather-forecast 
+
     - name: Build Application
       run: |
+        cd weather-forecast
         mvn clean package
       shell: bash
 
     - name: Run Application
       run: |
+        cd weather-forecast
         java -jar target/weatherforecast-0.0.1-SNAPSHOT.jar
       shell: bash
       env:
