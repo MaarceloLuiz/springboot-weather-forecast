@@ -32,7 +32,7 @@ Waning Crescent
 <td>8.1 °C</td><td>8.2 °C</td><td>8.1 °C</td><td>7.7 °C</td><td>8.0 °C</td><td>8.0 °C</td><td>8.0 °C</td><td>8.1 °C</td><td>8.1 °C</td><td>8.1 °C</td><td>9.0 °C</td><td>10.1 °C</td><td>11.2 °C</td><td>11.6 °C</td><td>11.8 °C</td><td>11.4 °C</td><td>10.1 °C</td><td>9.4 °C</td><td>9.3 °C</td><td>9.7 °C</td><td>10.1 °C</td><td>10.2 °C</td><td>10.3 °C</td><td>10.3 °C</td></tr><tr><th>Wind</th>
 <td>8.3 kph</td><td>8.6 kph</td><td>8.3 kph</td><td>8.6 kph</td><td>7.9 kph</td><td>7.9 kph</td><td>7.6 kph</td><td>7.2 kph</td><td>6.8 kph</td><td>6.1 kph</td><td>6.5 kph</td><td>6.5 kph</td><td>7.2 kph</td><td>6.8 kph</td><td>6.8 kph</td><td>5.8 kph</td><td>6.5 kph</td><td>7.2 kph</td><td>7.2 kph</td><td>7.6 kph</td><td>7.9 kph</td><td>7.6 kph</td><td>7.9 kph</td><td>7.6 kph</td></tr></table>
 
-*Updated at: 2024-12-26 13:20*
+*Updated at: 2024-12-26 13:50*
 
 <!-- FORECAST-TABLE-END -->
 
@@ -45,7 +45,7 @@ Waning Crescent
 <tr><td>2024-12-28</td><td><img src="https://cdn.weatherapi.com/weather/64x64/day/122.png" alt="Weather Condition Icon" style="width:64px; height:64px;"/></td><td>Overcast </td><td>Waning Crescent</td><td><img src="https://raw.githubusercontent.com/MaarceloLuiz/springboot-weather-forecast/main/assets/img/Waning Crescent.png" alt="Moon Phase Icon" style="width:50px; height:50px;"/></td><td>6.7 - 10.8 °C</td><td>11.5 kph</td></tr>
 </table>
 
-*Updated at: 2024-12-26 13:20*
+*Updated at: 2024-12-26 13:50*
 
 ## How To Use
 
