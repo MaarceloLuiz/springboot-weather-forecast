@@ -20,6 +20,7 @@ runs:
         mvn spring-boot:start
         sleep 60
         mvn spring-boot:stop
+      shell: bash
       env:
         WEATHER_API_KEY: ${{ inputs.weather-api-key }}
         FORECAST_CITY: ${{ inputs.city }}
