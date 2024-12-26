@@ -27,6 +27,8 @@ jobs:
           WEATHER_API_KEY: ${{ inputs.WEATHER_API_KEY }}
           FORECAST_CITY: ${{ inputs.FORECAST_CITY }}
           FORECAST_DAYS: ${{ inputs.FORECAST_DAYS }}
+          run: |
+            echo "Using API key"
           
       - name: Check out repository
         uses: actions/checkout@v3
