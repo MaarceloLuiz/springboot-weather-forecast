@@ -14,12 +14,14 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Build and Run Weather Application
+    - name: Build Application
       run: |
         mvn clean package
-        mvn spring-boot:start
-        sleep 60
-        mvn spring-boot:stop
+      shell: bash
+
+    - name: Run Application
+      run: |
+        java -jar target/weatherforecast-0.0.1-SNAPSHOT.jar
       shell: bash
       env:
         WEATHER_API_KEY: ${{ inputs.weather-api-key }}
