@@ -1,5 +1,6 @@
 package com.marceloluiz.weatherforecast.services;
 
+import com.marceloluiz.weatherforecast.model.HourlyWeatherData;
 import com.marceloluiz.weatherforecast.model.WeatherData;
 import com.marceloluiz.weatherforecast.model.WeatherForecast;
 import org.springframework.stereotype.Service;
@@ -12,16 +13,57 @@ public class MarkdownService {
     private static final String TIMESTAMP_FORMAT = "yyyy-MM-dd HH:mm";
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern(TIMESTAMP_FORMAT);
 
-    // Will finish later
-    public String generateHourlyWeatherMarkdown(WeatherForecast<WeatherData> forecast){
-        return "";
+    public String generateHourlyWeatherMarkdown(WeatherForecast<WeatherData> forecast, WeatherForecast<HourlyWeatherData> hourlyForecast){
+        StringBuilder markdown = new StringBuilder();
+
+        markdown.append("<!-- FORECAST-TABLE-START -->\n\n");
+        generateWeatherMarkdownTitle(markdown, forecast.getForecast().getFirst());
+
+        markdown.append("<table>\n")
+                .append("<tr>")
+                .append("<th>Hour</th>\n");
+        hourlyForecast.getForecast().forEach(hourlyData -> markdown.append("<td>")
+                                                                    .append(hourlyData.getHour())
+                                                                    .append("</td>"));
+        markdown.append("</tr>");
+
+        markdown.append("<tr>")
+                .append("<th>Weather</th>\n");
+        hourlyForecast.getForecast().forEach(hourlyData -> markdown.append("<td><img src=\"https:")
+                                                                    .append(hourlyData.getConditionImgUrl())
+                                                                    .append("\" alt=\"Weather Condition Icon\" style=\"width:64px; height:64px;\"/></td>"));
+        markdown.append("</tr>");
+
+        markdown.append("<tr>")
+                .append("<th>Condition</th>\n");
+        hourlyForecast.getForecast().forEach(hourlyData -> markdown.append("<td>")
+                                                                    .append(hourlyData.getCondition())
+                                                                    .append("</td>"));
+        markdown.append("</tr>");
+
+        markdown.append("<tr>")
+                .append("<th>Temperature</th>\n");
+        hourlyForecast.getForecast().forEach(hourlyData -> markdown.append("<td>")
+                                                                    .append(hourlyData.getTemperature())
+                                                                    .append(" °C</td>"));
+        markdown.append("</tr>");
+
+        markdown.append("<tr>")
+                .append("<th>Wind</th>\n");
+        hourlyForecast.getForecast().forEach(hourlyData -> markdown.append("<td>")
+                                                                    .append(hourlyData.getWind())
+                                                                    .append(" kph</td>"));
+        markdown.append("</tr>")
+                .append("</table>\n\n");
+
+        generateUpdatedAt(markdown);
+        markdown.append("<!-- FORECAST-TABLE-END -->\n\n");
+
+        return markdown.toString();
     }
 
     public String generateWeatherMarkdown(WeatherForecast<WeatherData> forecast){
         StringBuilder markdown = new StringBuilder();
-        markdown.append("<!-- FORECAST-TABLE-START -->\n\n");
-
-        generateWeatherMarkdownTitle(markdown, forecast.getForecast().getFirst());
 
         markdown.append("## ")
                 .append("Weather Forecast for Next ")
@@ -45,11 +87,7 @@ public class MarkdownService {
                     .append("</tr>\n");
         });
         markdown.append("</table>\n\n");
-        markdown.append("*Updated at: ")
-                .append(generateTimestamp())
-                .append("*\n\n");
-
-        markdown.append("<!-- FORECAST-TABLE-END -->\n\n");
+        generateUpdatedAt(markdown);
 
         return markdown.toString();
     }
@@ -94,6 +132,12 @@ public class MarkdownService {
             throw new IllegalStateException("REPO_URL environment variable not available");
         }
         return repoUrl;
+    }
+
+    private void generateUpdatedAt(StringBuilder markdown){
+        markdown.append("*Updated at: ")
+                .append(generateTimestamp())
+                .append("*\n\n");
     }
 
     private String generateTimestamp(){

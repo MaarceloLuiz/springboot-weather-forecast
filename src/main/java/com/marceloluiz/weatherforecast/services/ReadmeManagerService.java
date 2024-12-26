@@ -1,5 +1,7 @@
 package com.marceloluiz.weatherforecast.services;
 
+import com.marceloluiz.weatherforecast.model.HourlyWeatherData;
+import com.marceloluiz.weatherforecast.model.WeatherData;
 import com.marceloluiz.weatherforecast.model.WeatherForecast;
 import com.marceloluiz.weatherforecast.services.exceptions.FileServiceException;
 import lombok.AllArgsConstructor;
@@ -16,8 +18,12 @@ public class ReadmeManagerService {
         try{
             String readmeHowToUse = fileService.readHowToUseReadme();
 
-            WeatherForecast forecast = weatherService.getWeatherForecast();
-            String newReadme = markdownService.generateWeatherMarkdown(forecast) + readmeHowToUse;
+            WeatherForecast<WeatherData> forecast = weatherService.getWeatherForecast();
+            WeatherForecast<HourlyWeatherData> hourlyForecast = weatherService.getHourlyWeatherForecast();
+
+            String newReadme = markdownService.generateHourlyWeatherMarkdown(forecast, hourlyForecast)
+                    + markdownService.generateWeatherMarkdown(forecast)
+                    + readmeHowToUse;
 
             fileService.writeToReadme(newReadme);
         }catch (IllegalStateException e){
