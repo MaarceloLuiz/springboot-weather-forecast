@@ -22,6 +22,12 @@ jobs:
     timeout-minutes: 10
 
     steps:
+      - name: Run Weather Script
+        env:
+          WEATHER_API_KEY: ${{ inputs.WEATHER_API_KEY }}
+          FORECAST_CITY: ${{ inputs.FORECAST_CITY }}
+          FORECAST_DAYS: ${{ inputs.FORECAST_DAYS }}
+          
       - name: Check out repository
         uses: actions/checkout@v3
 
