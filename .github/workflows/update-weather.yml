@@ -4,6 +4,17 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 7 * * *"  # Runs once a day at 7 AM UTC
+  workflow_call:
+    inputs:
+      WEATHER_API_KEY:
+        required: true
+        type: string
+      FORECAST_CITY:
+        required: true
+        type: string
+      FORECAST_DAYS:
+        type: string
+        default: "3"
   
 jobs:
   run-weather-app:
@@ -35,9 +46,9 @@ jobs:
 
       - name: Run Weather App
         env:
-          WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
-          FORECAST_CITY: ${{ vars.FORECAST_CITY }}
-          FORECAST_DAYS: ${{ vars.FORECAST_DAYS }}
+          WEATHER_API_KEY: ${{ inputs.WEATHER_API_KEY || secrets.WEATHER_API_KEY }}
+          FORECAST_CITY: ${{ inputs.FORECAST_CITY || vars.FORECAST_CITY }}
+          FORECAST_DAYS: ${{ inputs.FORECAST_DAYS ||  vars.FORECAST_DAYS }}
           REPO_URL: https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/assets/img
         run: |
           mvn clean package
