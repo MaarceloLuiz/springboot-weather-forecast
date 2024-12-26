@@ -12,7 +12,12 @@ public class MarkdownService {
     private static final String TIMESTAMP_FORMAT = "yyyy-MM-dd HH:mm";
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern(TIMESTAMP_FORMAT);
 
-    public String generateWeatherMarkdown(WeatherForecast forecast){
+    // Will finish later
+    public String generateHourlyWeatherMarkdown(WeatherForecast<WeatherData> forecast){
+        return "";
+    }
+
+    public String generateWeatherMarkdown(WeatherForecast<WeatherData> forecast){
         StringBuilder markdown = new StringBuilder();
         markdown.append("<!-- FORECAST-TABLE-START -->\n\n");
 
@@ -93,12 +98,5 @@ public class MarkdownService {
 
     private String generateTimestamp(){
         return ZonedDateTime.now().format(FORMATTER);
-    }
-
-    //will finish later
-    public String generateAppInfoMarkdown(){
-        StringBuilder markdown = new StringBuilder();
-
-        return markdown.toString();
     }
 }

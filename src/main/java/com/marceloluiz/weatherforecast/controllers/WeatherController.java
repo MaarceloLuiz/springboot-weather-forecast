@@ -1,5 +1,7 @@
 package com.marceloluiz.weatherforecast.controllers;
 
+import com.marceloluiz.weatherforecast.model.HourlyWeatherData;
+import com.marceloluiz.weatherforecast.model.WeatherData;
 import com.marceloluiz.weatherforecast.model.WeatherForecast;
 import com.marceloluiz.weatherforecast.services.WeatherService;
 import io.swagger.client.ApiException;
@@ -16,7 +18,12 @@ public class WeatherController {
     private final WeatherService weatherService;
 
     @GetMapping("/forecast")
-    public ResponseEntity<WeatherForecast> getWeatherForecast() throws ApiException {
+    public ResponseEntity<WeatherForecast<WeatherData>> getWeatherForecast() throws ApiException {
         return ResponseEntity.ok(weatherService.getWeatherForecast());
+    }
+
+    @GetMapping("/hourly-forecast")
+    public ResponseEntity<WeatherForecast<HourlyWeatherData>> getHourlyWeatherForecast() throws ApiException {
+        return ResponseEntity.ok(weatherService.getHourlyWeatherForecast());
     }
 }
