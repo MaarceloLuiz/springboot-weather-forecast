@@ -1,0 +1,26 @@
+name: Weather Forecast Generator
+description: Generate a weather forecast table dynamically for README.md.
+inputs:
+  weather-api-key:
+    description: API key for the weather service
+    required: true
+  city:
+    description: City for the weather forecast
+    required: true
+  days:
+    description: Number of forecast days
+    required: false
+    default: "3"
+runs:
+  using: "composite"
+  steps:
+    - name: Build and Run Weather Application
+      run: |
+        mvn clean package
+        mvn spring-boot:start
+        sleep 60
+        mvn spring-boot:stop
+      env:
+        WEATHER_API_KEY: ${{ inputs.weather-api-key }}
+        FORECAST_CITY: ${{ inputs.city }}
+        FORECAST_DAYS: ${{ inputs.days }}
