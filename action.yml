@@ -14,16 +14,14 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Check Out Weather Forecast Repository
-      uses: actions/checkout@v3
+    - name: Set Up Java
+      uses: actions/setup-java@v3
       with:
-        repository: MaarceloLuiz/springboot-weather-forecast
-        token: ${{ secrets.GH_TOKEN }}
-        path: weather-forecast 
+        java-version: "21" 
+        distribution: "temurin"
 
     - name: Build Application
       run: |
-        cd weather-forecast
         mvn clean package
       shell: bash
 
