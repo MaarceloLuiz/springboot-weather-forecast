@@ -17,9 +17,10 @@ jobs:
       - name: Run Action
         uses: MaarceloLuiz/springboot-weather-forecast@v1.0.1
         with:
-          weather_api_key: ${{ secrets.WEATHER_API_KEY }}
-          forecast_city: ${{ vars.FORECAST_CITY }}
-          forecast_days: ${{ vars.FORECAST_DAYS }}
+          WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
+          FORECAST_CITY: ${{ vars.FORECAST_CITY }}
+          FORECAST_DAYS: ${{ vars.FORECAST_DAYS }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           
       - name: Commit and Push Changes
         run: |

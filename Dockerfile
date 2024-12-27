@@ -1,10 +1,9 @@
 FROM maven:3.9.9-eclipse-temurin-21-jammy AS builder
+ARG GH_TOKEN
+ENV GH_TOKEN=${GH_TOKEN}
 WORKDIR /app
-RUN mkdir -p ~/.m2
-
-COPY ./setup.sh /app/setup.sh
-RUN chmod +x /app/setup.sh && /app/setup.sh
-
+RUN mkdir -p ~/.m2 && \
+    echo "<settings><servers><server><id>github</id><username>GITHUB</username><password>${GH_TOKEN}</password></server></servers></settings>" > ~/.m2/settings.xml
 COPY pom.xml .
 COPY src ./src
 COPY README.md /app/README.md

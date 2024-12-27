@@ -1,20 +1,24 @@
 name: Weather Forecast Generator
 description: Generate a weather forecast table dynamically for README.md.
 inputs:
-  weather-api-key:
+  WEATHER_API_KEY:
     description: API key for the weather service
     required: true
-  city:
+  FORECAST_CITY:
     description: City for the weather forecast
     required: true
-  days:
+  FORECAST_DAYS:
     description: Number of forecast days
     required: false
     default: "3"
+  GH_TOKEN:
+    description: Number of forecast days
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.weather_api_key }}
-    - ${{ inputs.forecast_city }}
-    - ${{ inputs.forecast_days }}
+    - ${{ inputs.WEATHER_API_KEY }}
+    - ${{ inputs.FORECAST_CITY }}
+    - ${{ inputs.FORECAST_DAYS }}
+    - ${{ inputs.GH_TOKEN }}
