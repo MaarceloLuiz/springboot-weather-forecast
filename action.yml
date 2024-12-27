@@ -19,5 +19,5 @@ runs:
     - ${{ inputs.forecast_city }}
     - ${{ inputs.forecast_days }}
   env:
-    GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    REPO_URL: "https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/assets/img"
+    GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    REPO_URL: "https://raw.githubusercontent.com/MaarceloLuiz/springboot-weather-forecast/main/assets/img"
