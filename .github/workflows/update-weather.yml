@@ -14,37 +14,12 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v3
 
-      - name: Set up JDK
-        uses: actions/setup-java@v3
+      - name: Run Action
+        uses: MaarceloLuiz/springboot-weather-forecast@v1.0.1
         with:
-          java-version: '21'
-          distribution: 'temurin'
-          
-      - name: Configure Maven for GitHub Packages
-        run: |
-          mkdir -p ~/.m2
-          echo "<settings>
-            <servers>
-              <server>
-                <id>github</id>
-                <username>${{ github.actor }}</username>
-                <password>${{ secrets.GH_TOKEN }}</password>
-              </server>
-            </servers>
-          </settings>" > ~/.m2/settings.xml
-
-      - name: Run Weather App
-        env:
-          WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
-          FORECAST_CITY: ${{ vars.FORECAST_CITY }}
-          FORECAST_DAYS: ${{ vars.FORECAST_DAYS }}
-          REPO_URL: https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/assets/img
-        run: |
-          mvn clean package
-          # java -jar target/weatherforecast-0.0.1-SNAPSHOT.jar
-          mvn spring-boot:start
-          sleep 60
-          mvn spring-boot:stop
+          weather_api_key: ${{ secrets.WEATHER_API_KEY }}
+          forecast_city: ${{ vars.FORECAST_CITY }}
+          forecast_days: ${{ vars.FORECAST_DAYS }}
           
       - name: Commit and Push Changes
         run: |

@@ -12,25 +12,12 @@ inputs:
     required: false
     default: "3"
 runs:
-  using: "composite"
-  steps:
-    - name: Set Up Java
-      uses: actions/setup-java@v3
-      with:
-        java-version: "21" 
-        distribution: "temurin"
-
-    - name: Build Application
-      run: |
-        mvn clean package
-      shell: bash
-
-    - name: Run Application
-      run: |
-        cd weather-forecast
-        java -jar target/weatherforecast-0.0.1-SNAPSHOT.jar
-      shell: bash
-      env:
-        WEATHER_API_KEY: ${{ inputs.weather-api-key }}
-        FORECAST_CITY: ${{ inputs.city }}
-        FORECAST_DAYS: ${{ inputs.days }}
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.weather_api_key }}
+    - ${{ inputs.forecast_city }}
+    - ${{ inputs.forecast_days }}
+  env:
+    GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    REPO_URL: "https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/assets/img"

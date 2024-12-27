@@ -17,6 +17,14 @@ public class WeatherForecastApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		readmeManagerService.updateReadme();
+		try{
+			readmeManagerService.updateReadme();
+		}catch (Exception e){
+			e.getMessage();
+			e.printStackTrace();
+
+			System.exit(1);
+		}
+		System.exit(0);
 	}
 }
