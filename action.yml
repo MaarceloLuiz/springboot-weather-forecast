@@ -12,7 +12,7 @@ inputs:
     required: false
     default: "3"
   GH_TOKEN:
-    description: Number of forecast days
+    description: Token to solve authentication issues
     required: true
 runs:
   using: 'docker'

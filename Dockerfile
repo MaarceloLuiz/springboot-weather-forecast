@@ -3,7 +3,7 @@ ARG GH_TOKEN
 ENV GH_TOKEN=${GH_TOKEN}
 WORKDIR /app
 RUN mkdir -p ~/.m2 && \
-    echo "<settings><servers><server><id>github</id><username>GITHUB</username><password>${GH_TOKEN}</password></server></servers></settings>" > ~/.m2/settings.xml
+    echo "<settings><servers><server><id>github</id><username>MaarceloLuiz</username><password>${GH_TOKEN}</password></server></servers></settings>" > ~/.m2/settings.xml
 COPY pom.xml .
 COPY src ./src
 COPY README.md /app/README.md
