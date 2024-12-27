@@ -18,6 +18,3 @@ runs:
     - ${{ inputs.weather_api_key }}
     - ${{ inputs.forecast_city }}
     - ${{ inputs.forecast_days }}
-  env:
-    GH_TOKEN: ${{ secrets.GH_TOKEN }}
-    REPO_URL: "https://raw.githubusercontent.com/MaarceloLuiz/springboot-weather-forecast/main/assets/img"
