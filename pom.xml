@@ -30,11 +30,20 @@
 		<java.version>21</java.version>
 	</properties>
 
+	<!-- WeatherAPI -->
+<!--	<repositories>-->
+<!--		<repository>-->
+<!--			<id>github</id>-->
+<!--			<name>WeatherAPI Java Client Repositories</name>-->
+<!--			<url>https://maven.pkg.github.com/MaarceloLuiz/springboot-weather-forecast</url>-->
+<!--		</repository>-->
+<!--	</repositories>-->
+
 	<repositories>
 		<repository>
-			<id>github</id>
-			<name>WeatherAPI Java Client Repositories</name>
-			<url>https://maven.pkg.github.com/MaarceloLuiz/springboot-weather-forecast</url>
+			<id>repsy</id>
+			<name>weatherapi swagger-java-client</name>
+			<url>https://repo.repsy.io/mvn/marc/weatherapi-maven-repo</url>
 		</repository>
 	</repositories>
 

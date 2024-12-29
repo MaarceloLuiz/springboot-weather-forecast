@@ -11,16 +11,10 @@ inputs:
     description: Number of forecast days
     required: false
     default: "3"
-  GH_TOKEN:
-    description: Token to solve authentication issues
-    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - --build-arg
-    - GH_TOKEN=${{ inputs.GH_TOKEN }}
-  env:
-    WEATHER_API_KEY: ${{ inputs.WEATHER_API_KEY }}
-    FORECAST_CITY: ${{ inputs.FORECAST_CITY }}
-    FORECAST_DAYS: ${{ inputs.FORECAST_DAYS }}
+    - ${{ inputs.WEATHER_API_KEY }}
+    - ${{ inputs.FORECAST_CITY }}
+    - ${{ inputs.FORECAST_DAYS }}

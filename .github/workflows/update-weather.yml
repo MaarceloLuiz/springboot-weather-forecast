@@ -20,7 +20,6 @@ jobs:
           WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
           FORECAST_CITY: ${{ vars.FORECAST_CITY }}
           FORECAST_DAYS: ${{ vars.FORECAST_DAYS }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           
       - name: Commit and Push Changes
         run: |
