@@ -87,7 +87,7 @@ public class MarkdownService {
 
         markdown.append("<tr>")
                 .append("<th>Condition</th>\n");
-        forecast.getForecast().forEach(forecastDay -> markdown.append("<td>")
+        forecast.getForecast().forEach(forecastDay -> markdown.append("<td width=\"200px\">")
                 .append(forecastDay.getCondition())
                 .append("</td>"));
         markdown.append("</tr>");
