@@ -82,14 +82,14 @@ New Moon
 This project generates weather forecasts dynamically.
 
 ## How to Use
-### Step 1: Create an Account and Get an API Key
+## Step 1: Create an Account and Get an API Key
 
 - Visit [WeatherAPI](https://www.weatherapi.com/) and create a free account.
 - After signing up, navigate to your account dashboard.
 - Generate a new API key, which will be required for the application to fetch weather data.
 - Save this API key securely, as you’ll need it in the next steps.
 
-### Step 2: Set Up Environment Variables
+## Step 2: Set Up Environment Variables
 To configure the application, you need to create the following environment variables:
 
 **Required Environment Variables**
@@ -111,7 +111,7 @@ Add these variables to your GitHub repository as follows:
   - FORECAST_DAYS: The number of forecast days.
   - TABLE_TYPE: The type of forecast table.
 
-### Step 3: Embed the Tables in Any Repository
+## Step 3: Embed the Tables in Any Repository
 You can embed the generated tables into any repository, including your GitHub profile repository. Follow these steps:
 
 - If you haven’t already, create a repository named <your-username>/<your-username> (e.g., github.com/yourusername/yourusername). This will automatically act as your GitHub profile's README.md.
@@ -133,7 +133,7 @@ These placeholders are required for the workflow to identify where to embed the 
 - Flexibility: If you only choose one table type now, the other placeholder will simply remain empty and won't impact your workflow or file appearance.
 - Even if you only choose one table type (e.g., hourly), the workflow will ignore unused placeholders. You can later update the TABLE_TYPE variable to include other table types (e.g., multi-day or both) without modifying your README.md file.
 
-### Step 4: Set Up the GitHub Workflow
+## Step 4: Set Up the GitHub Workflow
 - To create a folder in your repository called .github/workflows/. follow the instructions:
   - Navigate to the **Actions** tab in your repository.
   - Under **"Simple workflow"**, click **"Configure"**.
@@ -182,8 +182,15 @@ jobs:
 - Commit and Push Changes:
   - Stages the updated README.md file and commits the changes with the message: Update weather forecast.
   - Pushes the changes to the main branch of the repository and includes a fallback (*|| echo "No changes to commit"*) in case there are no updates to the forecast tables.
+ 
+## Step 5: Ensure your Workflow has permission to push changes to your repository
+- Go to your repository settings:
+  - Settings > Actions > General
+- Under Workflow permissions, select:
+    - **Read and write permissions**
+- Click **Save**.
 
-### Step 5: Run the Workflow or Let it Run Automatically
+## Step 6: Run the Workflow or Let it Run Automatically
 - Manually Run the Workflow:
   - Go to the **Actions** tab in your repository.
   - Find the **"Update Weather Forecast"** workflow in the list.
