@@ -15,4 +15,4 @@ WORKDIR /app
 COPY --from=builder /app/target/weatherforecast-0.0.1-SNAPSHOT.jar weatherforecast.jar
 COPY README.md /app/README.md
 COPY README_how_to_use.md /app/README_how_to_use.md
-ENTRYPOINT ["java", "-jar", "weatherforecast.jar"]
+ENTRYPOINT ["java", "-jar", "/app/weatherforecast.jar"]

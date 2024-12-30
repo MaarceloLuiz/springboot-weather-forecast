@@ -29,9 +29,9 @@ public class MarkdownService {
 
         markdown.append("<tr>")
                 .append("<th>Weather</th>\n");
-        hourlyForecast.getForecast().forEach(hourlyData -> markdown.append("<td><img src=\"https:")
+        hourlyForecast.getForecast().forEach(hourlyData -> markdown.append("<td style=\"padding: 0;\"><img src=\"https:")
                                                                     .append(hourlyData.getConditionImgUrl())
-                                                                    .append("\" alt=\"Weather Condition Icon\" style=\"width:64px; height:64px;\"/></td>"));
+                                                                    .append("\" alt=\"Weather Condition Icon\" style=\"width:50px; height:50px;\"/></td>"));
         markdown.append("</tr>");
 
         markdown.append("<tr>")
