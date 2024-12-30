@@ -18,13 +18,25 @@ public class WeatherForecastApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		try{
-			readmeManagerService.updateReadme();
+			String tableType = System.getenv("TABLE_TYPE");
+			if (tableType == null || tableType.isEmpty()|| !isValidTableType(tableType)) {
+				System.out.println("Invalid or missing TABLE_TYPE. Defaulting to 'both'.");
+				tableType = "both";
+			}
+
+			readmeManagerService.updateReadme(tableType);
 		}catch (Exception e){
-			e.getMessage();
+			System.err.println("Error updating README: " + e.getMessage());
 			e.printStackTrace();
 
 			System.exit(1);
 		}
 		System.exit(0);
+	}
+
+	private boolean isValidTableType(String tableType) {
+		return tableType.equalsIgnoreCase("hourly")
+				|| tableType.equalsIgnoreCase("multi-day")
+				|| tableType.equalsIgnoreCase("both");
 	}
 }

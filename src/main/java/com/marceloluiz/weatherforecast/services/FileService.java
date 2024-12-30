@@ -1,6 +1,5 @@
 package com.marceloluiz.weatherforecast.services;
 
-import com.marceloluiz.weatherforecast.config.FileProperties;
 import com.marceloluiz.weatherforecast.services.exceptions.FileServiceException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -8,26 +7,21 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.StandardOpenOption;
 
 @Service
 @AllArgsConstructor
 public class FileService {
-    private FileProperties fileProperties;
-
-    public void writeToReadme(String markdown){
-        String filePath = fileProperties.getPrimaryReadmePath();
+    public void writeToMarkdown(String markdown, String readmePath){
         try{
-            Files.write(Path.of(filePath), markdown.getBytes(), StandardOpenOption.TRUNCATE_EXISTING);
+            Files.writeString(Path.of(readmePath), markdown);
         }catch (IOException e){
             throw new FileServiceException("Error to write file", e);
         }
     }
 
-    public String readHowToUseReadme(){
-        String filePath = fileProperties.getHowToUseReadmePath();
+    public String readMarkdown(String readmePath){
         try{
-            return Files.readString(Path.of(filePath));
+            return Files.readString(Path.of(readmePath));
         } catch (IOException e){
             throw new FileServiceException("Error to read file", e);
         }

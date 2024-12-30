@@ -11,6 +11,11 @@ inputs:
     description: Number of forecast days
     required: false
     default: "3"
+  TABLE_TYPE:
+    description: Table type to embed (hourly, multi-day, or both)
+    required: false
+    default: "both"
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -18,3 +23,4 @@ runs:
     WEATHER_API_KEY: ${{ inputs.WEATHER_API_KEY }}
     FORECAST_CITY: ${{ inputs.FORECAST_CITY }}
     FORECAST_DAYS: ${{ inputs.FORECAST_DAYS }}
+    TABLE_TYPE: ${{ inputs.TABLE_TYPE }}

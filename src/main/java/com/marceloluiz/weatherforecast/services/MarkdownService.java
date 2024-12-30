@@ -16,7 +16,7 @@ public class MarkdownService {
     public String generateHourlyWeatherMarkdown(WeatherForecast<WeatherData> forecast, WeatherForecast<HourlyWeatherData> hourlyForecast){
         StringBuilder markdown = new StringBuilder();
 
-        markdown.append("<!-- FORECAST-TABLE-START -->\n\n");
+        markdown.append("## Today's Weather\n\n");
         generateWeatherMarkdownTitle(markdown, forecast.getForecast().getFirst());
 
         markdown.append("<table>\n")
@@ -57,44 +57,79 @@ public class MarkdownService {
                 .append("</table>\n\n");
 
         generateUpdatedAt(markdown);
-        markdown.append("<!-- FORECAST-TABLE-END -->\n\n");
 
         return markdown.toString();
     }
 
     public String generateWeatherMarkdown(WeatherForecast<WeatherData> forecast){
         StringBuilder markdown = new StringBuilder();
-
         markdown.append("## ")
-                .append("Weather Forecast for Next ")
                 .append(forecast.getForecast().size())
-                .append(" Days\n\n");
+                .append(" Days ")
+                .append("Weather Forecast\n\n");
 
-        markdown.append("<table>\n");
-        markdown.append("<tr><th>Date</th><th>Weather</th><th>Condition</th><th>Moon Phase</th><th>Moon</th><th>Temperature</th><th>Wind</th></tr>\n");
+        generateWeatherMarkdownTitle(markdown, forecast.getForecast().getFirst());
 
-        forecast.getForecast().forEach(weatherData -> {
-            String temperature = weatherData.getMinTemperature() + " - " + weatherData.getMaxTemperature();
+        markdown.append("<table>\n")
+                .append("<tr>")
+                .append("<th>Date</th>\n");
+        forecast.getForecast().forEach(forecastDay -> markdown.append("<td>")
+                .append(forecastDay.getDate())
+                .append("</td>"));
+        markdown.append("</tr>");
 
-            markdown.append("<tr>")
-                    .append("<td>").append(weatherData.getDate()).append("</td>")
-                    .append("<td><img src=\"https:").append(weatherData.getConditionImgUrl()).append("\" alt=\"Weather Condition Icon\" style=\"width:64px; height:64px;\"/></td>")
-                    .append("<td>").append(weatherData.getCondition()).append("</td>")
-                    .append("<td>").append(weatherData.getMoonPhase()).append("</td>")
-                    .append("<td><img src=\"").append(getImgUrl(weatherData.getMoonPhase())).append("\" alt=\"Moon Phase Icon\" style=\"width:50px; height:50px;\"/></td>")
-                    .append("<td>").append(temperature).append(" °C</td>")
-                    .append("<td>").append(weatherData.getMaxWind()).append(" kph</td>")
-                    .append("</tr>\n");
+        markdown.append("<tr>")
+                .append("<th>Weather</th>\n");
+        forecast.getForecast().forEach(forecastDay -> markdown.append("<td style=\"padding: 0;\"><img src=\"https:")
+                .append(forecastDay.getConditionImgUrl())
+                .append("\" alt=\"Weather Condition Icon\" style=\"width:50px; height:50px;\"/></td>"));
+        markdown.append("</tr>");
+
+        markdown.append("<tr>")
+                .append("<th>Condition</th>\n");
+        forecast.getForecast().forEach(forecastDay -> markdown.append("<td>")
+                .append(forecastDay.getCondition())
+                .append("</td>"));
+        markdown.append("</tr>");
+
+        markdown.append("<tr>")
+                .append("<th>Moon Phase</th>\n");
+        forecast.getForecast().forEach(forecastDay -> markdown.append("<td>")
+                .append(forecastDay.getMoonPhase())
+                .append("</td>"));
+        markdown.append("</tr>");
+
+        markdown.append("<tr>")
+                .append("<th>Moon</th>\n");
+        forecast.getForecast().forEach(forecastDay -> markdown.append("<td style=\"padding: 10;\"><img src=\"")
+                .append(getImgUrl(forecastDay.getMoonPhase()))
+                .append("\" alt=\"Moon Phase Icon\" style=\"width:40px; height:40px;\"/></td>"));
+        markdown.append("</tr>");
+
+        markdown.append("<tr>")
+                .append("<th>Temperature</th>\n");
+        forecast.getForecast().forEach(forecastDay ->{
+            String temperature = forecastDay.getMinTemperature() + " - " + forecastDay.getMaxTemperature();
+            markdown.append("<td>")
+                    .append(temperature)
+                    .append(" °C</td>");
         });
-        markdown.append("</table>\n\n");
+        markdown.append("</tr>");
+
+        markdown.append("<tr>")
+                .append("<th>Wind</th>\n");
+        forecast.getForecast().forEach(forecastDay -> markdown.append("<td>")
+                .append(forecastDay.getMaxWind())
+                .append(" kph</td>"));
+        markdown.append("</tr>")
+                .append("</table>\n\n");
+
         generateUpdatedAt(markdown);
 
         return markdown.toString();
     }
 
     private void generateWeatherMarkdownTitle(StringBuilder markdown, WeatherData weatherData){
-        markdown.append("## Today's Weather\n\n");
-
         markdown.append("<div align=\"center\">\n\n");
 
         markdown.append("`")
@@ -137,6 +172,7 @@ public class MarkdownService {
     private void generateUpdatedAt(StringBuilder markdown){
         markdown.append("*Updated at: ")
                 .append(generateTimestamp())
+                .append(" by [MaarceloLuiz/springboot-weather-forecast](https://github.com/MaarceloLuiz/springboot-weather-forecast)")
                 .append("*\n\n");
     }
 
