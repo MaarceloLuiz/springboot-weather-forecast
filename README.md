@@ -82,4 +82,113 @@ New Moon
 This project generates weather forecasts dynamically.
 
 ## How to Use
-test
+### Step 1: Create an Account and Get an API Key
+
+- Visit [WeatherAPI](https://www.weatherapi.com/) and create a free account.
+- After signing up, navigate to your account dashboard.
+- Generate a new API key, which will be required for the application to fetch weather data.
+- Save this API key securely, as you’ll need it in the next steps.
+
+### Step 2: Set Up Environment Variables
+To configure the application, you need to create the following environment variables:
+
+**Required Environment Variables**
+- WEATHER_API_KEY: Your API key from WeatherAPI.
+- FORECAST_CITY: The city for which you want the weather forecast (e.g., Dublin).
+- FORECAST_DAYS: Number of days to forecast (e.g., 3 for a 3-day forecast).
+- TABLE_TYPE: Type of table you want to generate. Options are:
+  - hourly: For hourly forecasts. -> [**hourly table example**](https://github.com/MaarceloLuiz/springboot-weather-forecast#1--hourly-forecast)
+  - multi-day: For multi-day forecasts. -> [**multi-day table example**](https://github.com/MaarceloLuiz/springboot-weather-forecast#2--multi-day-forecast)
+  - both: For both hourly and multi-day forecasts.
+
+**Configuration** <br>
+Add these variables to your GitHub repository as follows:
+- Navigate to your repository on GitHub.
+- Go to **Settings > Secrets and variables > Actions**.
+- Under the **Secrets** tab, add your WEATHER_API_KEY as a new secret.
+- Under the **Variables** tab, add the following variables:
+  - FORECAST_CITY: The city you want to forecast.
+  - FORECAST_DAYS: The number of forecast days.
+  - TABLE_TYPE: The type of forecast table.
+
+### Step 3: Embed the Tables in Any Repository
+You can embed the generated tables into any repository, including your GitHub profile repository. Follow these steps:
+
+- If you haven’t already, create a repository named <your-username>/<your-username> (e.g., github.com/yourusername/yourusername). This will automatically act as your GitHub profile's README.md.
+- Add the following placeholders to your README.md file exactly as shown, regardless of which table you choose to embed.
+  
+```bash
+<!-- HOURLY-START -->
+<!-- HOURLY-END -->
+
+<!-- MULTI-DAY-START -->
+<!-- MULTI-DAY-END -->
+```
+
+These placeholders are required for the workflow to identify where to embed the forecast tables. **Make sure the placeholders match exactly as shown above**, including the casing and dashes.
+- \<!-- HOURLY-START -->, \<!-- HOURLY-END --> : These placeholders will embed the [**hourly table**](https://github.com/MaarceloLuiz/springboot-weather-forecast#1--hourly-forecast), in case you choose this option in the workflow configuration.
+- \<!-- MULTI-DAY-START -->, \<!-- MULTI-DAY-END --> : These placeholders will embed the [**multi-day table**](https://github.com/MaarceloLuiz/springboot-weather-forecast#2--multi-day-forecast), in case you choose this option in the workflow configuration.
+
+**Why should you add both placeholders?**
+- Flexibility: If you only choose one table type now, the other placeholder will simply remain empty and won't impact your workflow or file appearance.
+- Even if you only choose one table type (e.g., hourly), the workflow will ignore unused placeholders. You can later update the TABLE_TYPE variable to include other table types (e.g., multi-day or both) without modifying your README.md file.
+
+### Step 4: Set Up the GitHub Workflow
+- To create a folder in your repository called .github/workflows/. follow the instructions:
+  - Navigate to the **Actions** tab in your repository.
+  - Under **"Simple workflow"**, click **"Configure"**.
+  - Rename the default workflow file to *update-weather.yml* or *update-readme.yml* for clarity.
+- Copy and paste the following workflow code into the file:
+    
+```bash
+name: "Update Weather"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 9 * * *" 
+  
+jobs:
+  run-weather-app:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Run Action
+        uses: MaarceloLuiz/springboot-weather-forecast@v1.0.2
+        with:
+          WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
+          FORECAST_CITY: ${{ vars.FORECAST_CITY }}
+          FORECAST_DAYS: ${{ vars.FORECAST_DAYS }}
+          TABLE_TYPE: ${{ vars.TABLE_TYPE }}
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add README.md
+          git commit -m "Update weather forecast" || echo "No changes to commit"
+          git push origin main
+```
+
+**Workflow Explanation:**
+- *cron: "0 9 * * *"*  -> Runs automatically every day at 9:00 AM UTC.
+- *MaarceloLuiz/springboot-weather-forecast@v1.0.2* -> Executes the custom GitHub action that generates the weather forecast tables.
+  - It uses the input you defined before:
+    - **WEATHER_API_KEY, FORECAST_CITY, FORECAST_DAYS, TABLE_TYPE.**
+- Commit and Push Changes:
+  - Stages the updated README.md file and commits the changes with the message: Update weather forecast.
+  - Pushes the changes to the main branch of the repository and includes a fallback (*|| echo "No changes to commit"*) in case there are no updates to the forecast tables.
+
+### Step 5: Run the Workflow or Let it Run Automatically
+- Manually Run the Workflow:
+  - Go to the **Actions** tab in your repository.
+  - Find the **"Update Weather Forecast"** workflow in the list.
+  - Click **"Run workflow"** to test it immediately.
+- Automatically Run the Workflow:
+  - The workflow is set to run daily at 9:00 AM UTC based on the schedule defined in the cron configuration.
+- Check the Results:
+  - Once the workflow completes, check your README.md file in the repository.
