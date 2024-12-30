@@ -175,7 +175,7 @@ jobs:
 ```
 
 **Workflow Explanation:**
-- *cron: "0 9 * * *"*  -> Runs automatically every day at 9:00 AM UTC.
+- ``` cron: "0 9 * * *" ```  -> Runs automatically every day at 9:00 AM UTC.
 - *MaarceloLuiz/springboot-weather-forecast@v1.0.2* -> Executes the custom GitHub action that generates the weather forecast tables.
   - It uses the input you defined before:
     - **WEATHER_API_KEY, FORECAST_CITY, FORECAST_DAYS, TABLE_TYPE.**
