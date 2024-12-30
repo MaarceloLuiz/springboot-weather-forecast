@@ -14,7 +14,7 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.WEATHER_API_KEY }}
-    - ${{ inputs.FORECAST_CITY }}
-    - ${{ inputs.FORECAST_DAYS }}
+  env:
+    WEATHER_API_KEY: ${{ inputs.WEATHER_API_KEY }}
+    FORECAST_CITY: ${{ inputs.FORECAST_CITY }}
+    FORECAST_DAYS: ${{ inputs.FORECAST_DAYS }}
