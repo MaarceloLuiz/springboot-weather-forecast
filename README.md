@@ -89,33 +89,12 @@ This project generates weather forecasts dynamically.
 - Generate a new API key, which will be required for the application to fetch weather data.
 - Save this API key securely, as you’ll need it in the next steps.
 
-## Step 2: Set Up Environment Variables
-To configure the application, you need to create the following environment variables:
 
-**Required Environment Variables**
-- WEATHER_API_KEY: Your API key from WeatherAPI.
-- FORECAST_CITY: The city for which you want the weather forecast (e.g., Dublin).
-- FORECAST_DAYS: Number of days to forecast (e.g., 3 for a 3-day forecast).
-- TABLE_TYPE: Type of table you want to generate. Options are:
-  - hourly: For hourly forecasts. -> [**hourly table example**](https://github.com/MaarceloLuiz/springboot-weather-forecast#1--hourly-forecast)
-  - multi-day: For multi-day forecasts. -> [**multi-day table example**](https://github.com/MaarceloLuiz/springboot-weather-forecast#2--multi-day-forecast)
-  - both: For both hourly and multi-day forecasts.
-
-**Configuration** <br>
-Add these variables to your GitHub repository as follows:
-- Navigate to your repository on GitHub.
-- Go to **Settings > Secrets and variables > Actions**.
-- Under the **Secrets** tab, add your WEATHER_API_KEY as a new secret.
-- Under the **Variables** tab, add the following variables:
-  - FORECAST_CITY: The city you want to forecast.
-  - FORECAST_DAYS: The number of forecast days.
-  - TABLE_TYPE: The type of forecast table.
-
-## Step 3: Embed the Tables in Any Repository
+## Step 2: Embed the Tables in Any Repository
 You can embed the generated tables into any repository, including your GitHub profile repository. Follow these steps:
 
 - If you haven’t already, create a repository named <your-username>/<your-username> (e.g., github.com/yourusername/yourusername). This will automatically act as your GitHub profile's README.md.
-- Add the following placeholders to your README.md file exactly as shown, regardless of which table you choose to embed.
+- Insert the following placeholders into your README.md file exactly as shown below. Place the placeholders in the specific location where you want the table to appear.
   
 ```bash
 <!-- HOURLY-START -->
@@ -132,6 +111,26 @@ These placeholders are required for the workflow to identify where to embed the 
 **Why should you add both placeholders?**
 - Flexibility: If you only choose one table type now, the other placeholder will simply remain empty and won't impact your workflow or file appearance.
 - Even if you only choose one table type (e.g., hourly), the workflow will ignore unused placeholders. You can later update the TABLE_TYPE variable to include other table types (e.g., multi-day or both) without modifying your README.md file.
+
+
+## Step 3: Set Up Environment Variables
+**Configuration and Environment Variables** <br>
+To add Secrets and Variables:, follow these steps **carefully**:
+
+- Navigate to your repository on GitHub.
+- Go to **Settings > Secrets and variables > Actions**.
+- Under the **Secrets** tab, click **New Repository Secret** and add the following **exactly as shown**:
+  - ``` WEATHER_API_KEY ```: Your API key from WeatherAPI.
+- Under the **Variables** tab, click **New Repository Variable** and add the following variables **exactly as shown**:
+  - ``` FORECAST_CITY ```: The city for which you want the weather forecast (e.g., Dublin).
+  - ``` FORECAST_DAYS ```: Number of days to forecast (e.g., 3 for a 3-day forecast).
+  - ``` TABLE_TYPE ```: The type of forecast table. **Choose ONE of the following options**:
+    - ``` hourly ``` : For hourly forecasts. -> [**hourly table example**](https://github.com/MaarceloLuiz/springboot-weather-forecast#1--hourly-forecast)
+    - ``` multi-day ``` : For multi-day forecasts. -> [**multi-day table example**](https://github.com/MaarceloLuiz/springboot-weather-forecast#2--multi-day-forecast)
+    - ``` both ``` : For both hourly and multi-day forecasts.
+
+⚠️ **Important:** Ensure the variable names (``` WEATHER_API_KEY ```, ``` FORECAST_CITY ``` , ``` FORECAST_DAYS ```, ``` TABLE_TYPE``` ) are entered exactly as shown above, including capitalization.
+
 
 ## Step 4: Set Up the GitHub Workflow
 - To create a folder in your repository called .github/workflows/. follow the instructions:
@@ -193,7 +192,7 @@ jobs:
 ## Step 6: Run the Workflow or Let it Run Automatically
 - Manually Run the Workflow:
   - Go to the **Actions** tab in your repository.
-  - Find the **"Update Weather Forecast"** workflow in the list.
+  - Find the **"Update Weather"** workflow in the list.
   - Click **"Run workflow"** to test it immediately.
 - Automatically Run the Workflow:
   - The workflow is set to run daily at 9:00 AM UTC based on the schedule defined in the cron configuration.
