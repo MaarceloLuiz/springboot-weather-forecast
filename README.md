@@ -77,11 +77,38 @@ Waxing Crescent
 
 
 <!-- MULTI-DAY-END -->
+---
 
-## Weather Forecast
-This project generates weather forecasts dynamically.
+# Weather Forecast
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/MaarceloLuiz/springboot-weather-forecast/blob/main/License) 
 
-## How to Use
+## Objective
+- Fetching accurate weather data from [WeatherAPI](https://www.weatherapi.com/).
+- Updating forecasts automatically.
+- Using a CI/CD pipeline for workflow automation.
+
+## Features
+- Daily Updates: Automatically fetches and updates weather forecasts every day.
+- GitHub Actions: Utilizes workflows to automate daily operations.
+- Dockerized Environment: Provides a consistent runtime environment for builds and tests.
+- Java Spring Boot: Implements the application's backend logic.
+- Library Deployment with Repsy: [WeatherAPI](https://www.weatherapi.com/)'s library was deployed on Repsy, with the library also available on GitHub Packages.
+- Customizable Forecast: Configurable for location, days and table style.
+
+## Technologies and Frameworks
+- Programming Languages & Frameworks
+  - Java
+  - Spring Boot
+  - Maven (Build Tool)
+- CI/CD & Automation
+  - GitHub Actions
+  - Workflow Configuration (action.yml)
+- Containerization
+  - Docker
+
+---
+
+# How to Use
 ## Step 1: Create an Account and Get an API Key
 
 - Visit [WeatherAPI](https://www.weatherapi.com/) and create a free account.
