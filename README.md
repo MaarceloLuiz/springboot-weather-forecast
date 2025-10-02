@@ -4,14 +4,14 @@
 
 <div align="center">
 
-`Dublin - 2025-10-01`
+`Dublin - 2025-10-02`
 
 <table style="border-collapse: collapse; width: auto; margin: auto;">
 <tr>
 <td align="center" style="border: none; padding: 10px;">
-<img src="https://cdn.weatherapi.com/weather/64x64/day/176.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/>
+<img src="https://cdn.weatherapi.com/weather/64x64/day/302.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/>
 
-Patchy rain nearby
+Moderate rain
 
 </td>
 <td align="center" style="border: none; padding: 10px;">
@@ -27,12 +27,12 @@ Waxing Gibbous
 <table>
 <tr><th>Hour</th>
 <td>00:00</td><td>01:00</td><td>02:00</td><td>03:00</td><td>04:00</td><td>05:00</td><td>06:00</td><td>07:00</td><td>08:00</td><td>09:00</td><td>10:00</td><td>11:00</td><td>12:00</td><td>13:00</td><td>14:00</td><td>15:00</td><td>16:00</td><td>17:00</td><td>18:00</td><td>19:00</td><td>20:00</td><td>21:00</td><td>22:00</td><td>23:00</td></tr><tr><th>Weather</th>
-<td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/night/296.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/night/296.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/night/143.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/night/119.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/night/176.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/night/116.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/night/116.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/night/113.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/116.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/116.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/116.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/119.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/116.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/176.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/122.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/119.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/122.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/119.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/119.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/116.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/night/116.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/night/122.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/night/116.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/night/119.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td></tr><tr><th>Condition</th>
-<td>Light rain</td><td>Light rain</td><td>Mist</td><td>Cloudy </td><td>Patchy rain nearby</td><td>Partly Cloudy </td><td>Partly Cloudy </td><td>Clear </td><td>Partly cloudy</td><td>Partly Cloudy </td><td>Partly Cloudy </td><td>Cloudy </td><td>Partly Cloudy </td><td>Patchy rain nearby</td><td>Overcast </td><td>Cloudy </td><td>Overcast </td><td>Cloudy </td><td>Cloudy </td><td>Partly Cloudy </td><td>Partly Cloudy </td><td>Overcast </td><td>Partly Cloudy </td><td>Cloudy </td></tr><tr><th>Temperature</th>
-<td>14.4 °C</td><td>14.3 °C</td><td>14.5 °C</td><td>14.4 °C</td><td>14.2 °C</td><td>14.2 °C</td><td>14.0 °C</td><td>13.9 °C</td><td>15.2 °C</td><td>14.5 °C</td><td>15.8 °C</td><td>16.5 °C</td><td>16.4 °C</td><td>16.7 °C</td><td>16.4 °C</td><td>18.0 °C</td><td>16.8 °C</td><td>16.6 °C</td><td>15.9 °C</td><td>14.6 °C</td><td>14.0 °C</td><td>14.2 °C</td><td>14.8 °C</td><td>15.2 °C</td></tr><tr><th>Wind</th>
-<td>10.1 kph</td><td>9.7 kph</td><td>9.4 kph</td><td>10.1 kph</td><td>10.4 kph</td><td>10.1 kph</td><td>11.2 kph</td><td>10.4 kph</td><td>10.4 kph</td><td>9.4 kph</td><td>11.5 kph</td><td>13.0 kph</td><td>11.2 kph</td><td>10.1 kph</td><td>10.1 kph</td><td>14.8 kph</td><td>13.0 kph</td><td>11.9 kph</td><td>11.2 kph</td><td>10.8 kph</td><td>10.4 kph</td><td>11.2 kph</td><td>10.8 kph</td><td>12.2 kph</td></tr></table>
+<td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/night/119.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/night/116.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/night/122.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/night/200.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/night/200.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/night/119.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/night/176.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/night/176.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/116.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/176.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/176.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/266.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/176.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/263.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/266.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/266.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/176.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/296.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/296.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/night/296.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/night/389.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/night/116.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/night/116.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/night/116.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td></tr><tr><th>Condition</th>
+<td>Cloudy </td><td>Partly Cloudy </td><td>Overcast </td><td>Thundery outbreaks in nearby</td><td>Thundery outbreaks in nearby</td><td>Cloudy </td><td>Patchy rain nearby</td><td>Patchy rain nearby</td><td>Partly cloudy</td><td>Patchy rain nearby</td><td>Patchy rain nearby</td><td>Light drizzle</td><td>Patchy rain nearby</td><td>Patchy light drizzle</td><td>Light drizzle</td><td>Light drizzle</td><td>Patchy rain nearby</td><td>Light rain</td><td>Light rain</td><td>Light rain</td><td>Moderate or heavy rain in area with thunder</td><td>Partly Cloudy </td><td>Partly Cloudy </td><td>Partly Cloudy </td></tr><tr><th>Temperature</th>
+<td>13.7 °C</td><td>13.6 °C</td><td>13.4 °C</td><td>14.3 °C</td><td>14.4 °C</td><td>14.5 °C</td><td>14.1 °C</td><td>14.2 °C</td><td>15.3 °C</td><td>15.1 °C</td><td>15.9 °C</td><td>15.7 °C</td><td>15.1 °C</td><td>15.3 °C</td><td>14.8 °C</td><td>14.8 °C</td><td>14.5 °C</td><td>14.5 °C</td><td>14.7 °C</td><td>15.5 °C</td><td>15.7 °C</td><td>13.2 °C</td><td>13.1 °C</td><td>12.7 °C</td></tr><tr><th>Wind</th>
+<td>10.1 kph</td><td>9.4 kph</td><td>8.3 kph</td><td>8.3 kph</td><td>7.9 kph</td><td>6.5 kph</td><td>7.9 kph</td><td>9.0 kph</td><td>11.2 kph</td><td>13.0 kph</td><td>15.5 kph</td><td>19.4 kph</td><td>21.2 kph</td><td>24.5 kph</td><td>30.2 kph</td><td>34.6 kph</td><td>35.3 kph</td><td>31.7 kph</td><td>28.4 kph</td><td>24.1 kph</td><td>29.5 kph</td><td>19.8 kph</td><td>22.3 kph</td><td>19.1 kph</td></tr></table>
 
-*Updated at: 2025-10-01 07:12 by [MaarceloLuiz/springboot-weather-forecast](https://github.com/MaarceloLuiz/springboot-weather-forecast)*
+*Updated at: 2025-10-02 07:11 by [MaarceloLuiz/springboot-weather-forecast](https://github.com/MaarceloLuiz/springboot-weather-forecast)*
 
 
 <!-- HOURLY-END -->
@@ -43,14 +43,14 @@ Waxing Gibbous
 
 <div align="center">
 
-`Dublin - 2025-10-01`
+`Dublin - 2025-10-02`
 
 <table style="border-collapse: collapse; width: auto; margin: auto;">
 <tr>
 <td align="center" style="border: none; padding: 10px;">
-<img src="https://cdn.weatherapi.com/weather/64x64/day/176.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/>
+<img src="https://cdn.weatherapi.com/weather/64x64/day/302.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/>
 
-Patchy rain nearby
+Moderate rain
 
 </td>
 <td align="center" style="border: none; padding: 10px;">
@@ -65,15 +65,15 @@ Waxing Gibbous
 
 <table>
 <tr><th>Date</th>
-<td>2025-10-01</td><td>2025-10-02</td><td>2025-10-03</td></tr><tr><th>Weather</th>
-<td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/176.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/302.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/302.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td></tr><tr><th>Condition</th>
-<td width="200px">Patchy rain nearby</td><td width="200px">Moderate rain</td><td width="200px">Moderate rain</td></tr><tr><th>Moon Phase</th>
+<td>2025-10-02</td><td>2025-10-03</td><td>2025-10-04</td></tr><tr><th>Weather</th>
+<td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/302.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/302.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td><td style="padding: 0;"><img src="https://cdn.weatherapi.com/weather/64x64/day/176.png" alt="Weather Condition Icon" style="width:50px; height:50px;"/></td></tr><tr><th>Condition</th>
+<td width="200px">Moderate rain</td><td width="200px">Moderate rain</td><td width="200px">Patchy rain nearby</td></tr><tr><th>Moon Phase</th>
 <td>Waxing Gibbous</td><td>Waxing Gibbous</td><td>Waxing Gibbous</td></tr><tr><th>Moon</th>
 <td style="padding: 10;"><img src="https://raw.githubusercontent.com/MaarceloLuiz/springboot-weather-forecast/main/assets/img/Waxing Gibbous.png" alt="Moon Phase Icon" style="width:40px; height:40px;"/></td><td style="padding: 10;"><img src="https://raw.githubusercontent.com/MaarceloLuiz/springboot-weather-forecast/main/assets/img/Waxing Gibbous.png" alt="Moon Phase Icon" style="width:40px; height:40px;"/></td><td style="padding: 10;"><img src="https://raw.githubusercontent.com/MaarceloLuiz/springboot-weather-forecast/main/assets/img/Waxing Gibbous.png" alt="Moon Phase Icon" style="width:40px; height:40px;"/></td></tr><tr><th>Temperature</th>
-<td>13.9 - 18.0 °C</td><td>9.8 - 15.6 °C</td><td>9.9 - 16.9 °C</td></tr><tr><th>Wind</th>
-<td>14.8 kph</td><td>30.2 kph</td><td>41.8 kph</td></tr></table>
+<td>12.7 - 15.9 °C</td><td>10.5 - 17.0 °C</td><td>7.5 - 12.4 °C</td></tr><tr><th>Wind</th>
+<td>35.3 kph</td><td>39.6 kph</td><td>46.4 kph</td></tr></table>
 
-*Updated at: 2025-10-01 07:12 by [MaarceloLuiz/springboot-weather-forecast](https://github.com/MaarceloLuiz/springboot-weather-forecast)*
+*Updated at: 2025-10-02 07:11 by [MaarceloLuiz/springboot-weather-forecast](https://github.com/MaarceloLuiz/springboot-weather-forecast)*
 
 
 <!-- MULTI-DAY-END -->
